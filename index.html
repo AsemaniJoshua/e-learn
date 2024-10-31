@@ -18,27 +18,76 @@
 
         <!-- Header -->
     <div id="a">
+
         <header>
-            <div class="logo">
+
+
+            <!-- Bootstrap Navbar -->
+         <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand"  href="#"><img src="images/Logo.png" id="logo" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon text-bg-light"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#courses">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Signup.html">Sign up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+
+
+
+
+            <!-- <div class="logo">
                 <a href="index.html"><img src="images/Logo.png" alt="logo"></a>
             </div>
             <div>
                 <nav>
+
+                    <div class="menu-toggle" id="mobile-menu">
+
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="blog.html">FAQ</a></li>
-                        <li class="dropdown"><a href="#" class="dropbtn">More</a>
+                        
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="Signup.html">Sign up</a></li>
+                        <li class="dropdown"><a href="login.html">Login</a>
                             <div class="dropdown-content">
-                                <a href="login.html">Login</a>
-                                <a href="Signup.html">Sign up</a>
-                                <a href="contact.html">Contact Us</a>
+                                
+                                
+                                
+                                
                             </div>
                         </li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="blog.html">FAQ</a></li>
                     </ul>
                 </nav>
-            </div>
+            </div> -->
         </header>
     </div>
 
@@ -46,22 +95,24 @@
 
    <div class="landing-page">
        <div class="row">
-        <div class="landing-text col-sm-6">
+        <div class="landing-text col-sm-6 order-2 order-md-1">
             <h1>Welcome to E-LEARN</h1>
             <p> We're thrilled to have you here and can't wait to embark on this journey together. Here, we're all about creating a community where you can feel inspired, informed, and entertained.</p>
  
              <p>
-                 Our goal is to provide a space where you can discover new ideas, connect with like-minded individuals, and explore a wealth of resources. Whether you're looking for the latest trends, seeking expert advice, or simply want to unwind with some light-hearted content, we've got you covered.
+                 Our goal is to provide a space where you can discover new ideas, connect with like-minded individuals, and explore a wealth of resources. 
              </p>
              
              <p>
-                 Dive into our extensive library of articles, videos, and podcasts, all curated to bring you the best of what the world has to offer. From in-depth analysis of current events to tips and tricks for everyday life, there's something here for everyone. We believe in the power of knowledge and the joy of discovery, and we're committed to bringing you fresh, engaging content that will keep you coming back for more.
+                  We believe in the power of knowledge and the joy of discovery, and we're committed to bringing you fresh, engaging content that will keep you coming back for more.
              </p> 
  
-             <button href="#courses">Get Started</button>
+             <a href="#courses"><button>Get Started</button></a>
+
+             <a href="#about"><button>Learn More</button></a>
         </div>
 
-        <div class="landing-image col-sm-6">
+        <div class="landing-image col-sm-6 order-1 order-md-2">
             <img src="images/2151675058.png" alt="landing-image" class="img-fluid">
         </div>
         
@@ -268,8 +319,8 @@
                 <h3>Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#courses">Courses</a></li>
                     <li><a href="blog.html">FAQ</a></li>
                 </ul>
                 <div>
