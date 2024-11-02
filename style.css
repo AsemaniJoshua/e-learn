@@ -1,3 +1,12 @@
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #001F3F;
+    --tertiary-color: #F5F5DC;
+    --button-color: #c5a800;
+}
+
+
+
 *{
     margin:0;
     padding: 0;
@@ -41,19 +50,58 @@ header{
 /* .logo{
     background-color:#FFD700 ;
 } */
-.logo img{
-    width: 100px;
-    height: 100px;
+
+#logo{
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     margin-right: auto;
     display: inline-block;
     position: relative;
-    top: -15px;
+    top: -10px;
 }
+
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -15px;
+    left: -30px;
+    background-color: var(--secondary-color);
+    /* top: 70px;
+    left: -70px; */
+}
+
+nav ul li .nav-link{
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+nav a:hover,.dropdown:hover .dropbtn{
+    background-color: #FFD700;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+} 
+
+/* header nav #logo img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: auto;
+    display: inline-block;
+    position: relative;
+    /* top: -15px; */
+/* 
 nav{
     text-align: right;
     position: relative;
-    top: -80px;
+    top: 70px;
     left: -70px;
 }
 nav ul{
@@ -74,7 +122,25 @@ nav a:hover,.dropdown:hover .dropbtn{
     background-color: #FFD700;
     border-radius: 5px;
     color: black;
+} */
+
+/* Navbar Toggler */
+
+/* nav .menu-toggle {
+    display: none;
+    cursor: pointer;
 }
+
+nav .menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+} */
+
+
+
 /* .dropdown {
     float: left;
     overflow: hidden;
@@ -129,6 +195,9 @@ nav a:hover,.dropdown:hover .dropbtn{
     width: 49%;
     padding: 30px;
     display: inline-block;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 80px;
 }
 
 .landing-text h1{
@@ -138,7 +207,7 @@ nav a:hover,.dropdown:hover .dropbtn{
 }
 
 .landing-text button{
-    background-color: #FFD700;
+    background-color:var(--button-color);
     border: none;
     color: white;
     padding: 10px 20px;
@@ -149,6 +218,13 @@ nav a:hover,.dropdown:hover .dropbtn{
     margin-top: 5px;
     cursor: pointer;
     border-radius: 50px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.landing-text button:hover{
+    background-color: #FFD700;
+    color: rgb(63, 63, 63);
 }
 
 .landing-image{
@@ -165,7 +241,13 @@ nav a:hover,.dropdown:hover .dropbtn{
     text-align: center;
     margin-top: 30px;
     margin-bottom: 60px;
+    padding : 20px;
 }
+
+.about-us img{
+    gap: 20px;
+}
+
 .about-us h2{
     font-size: 36px;
     margin-bottom: 30px;
@@ -218,6 +300,7 @@ nav a:hover,.dropdown:hover .dropbtn{
     margin: 30px 20px;
     background-color: #fcf5f5;
     text-align: center;
+    padding: 20px;
 }
 .course-carousel img {
     width: 100%;
@@ -240,7 +323,7 @@ nav a:hover,.dropdown:hover .dropbtn{
     margin-bottom: 10px;
 }
 .course-carousel .button {
-    background-color: #FFD700;
+    background-color: var(--button-color);
     border: none;
     color: white;
     padding: 10px 20px;
@@ -252,7 +335,15 @@ nav a:hover,.dropdown:hover .dropbtn{
     margin-bottom: 20px;
     cursor: pointer;
     border-radius: 50px;
+    font-weight: bold;
 }
+
+.course-carousel button:hover{
+    background-color: #FFD700;
+    color: rgb(63, 63, 63);
+}
+
+
 .course-carousel .price {
     font-size: 20px;
     /* margin-right: 48%;
@@ -281,6 +372,7 @@ nav a:hover,.dropdown:hover .dropbtn{
     text-align: center;
     margin-top: 30px;
     margin-bottom: 60px;
+    padding: 20px;
 }
 .testimonials h3{
     font-size: 36px;
@@ -346,6 +438,14 @@ nav a:hover,.dropdown:hover .dropbtn{
     color: black;
 }
 
+.footer img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    top: 25%;
+}
+
 .footer1{
     padding: 20px;
     text-align: center;
@@ -362,6 +462,10 @@ nav a:hover,.dropdown:hover .dropbtn{
     padding: 20px;
     text-align: center;
     margin-top: 20px;
+}
+
+.footer2 li{
+    margin: 20px;
 }
 
 .footer2 h3{
@@ -383,11 +487,12 @@ nav a:hover,.dropdown:hover .dropbtn{
     color: black;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 20px 30px;
     border-radius: 5px;
 }
 .footer2 a:hover{
-    background-color: #FFD700;
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 .footer3{
@@ -422,3 +527,61 @@ nav a:hover,.dropdown:hover .dropbtn{
     padding: 20px;
     text-align: center;
 }
+
+
+
+/* Media Queries */
+
+@media (max-width: 1024px) {
+    /* nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    nav .menu-toggle {
+        display: block;
+    } */
+
+    .course-header span{
+        background: #fff;
+        padding: 0 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    nav a:hover,.dropdown:hover .dropbtn{
+        background-color: #FFD700;
+        border-radius: 5px;
+        font-weight: bold;
+        color: black;
+    } 
+
+    .landing-text button:hover{
+        background-color: #FFD700;
+        color: rgb(63, 63, 63);
+    }
+
+    .course-carousel img:hover {
+        opacity: 0.8;
+    }
+
+    .course-carousel button:hover{
+        background-color: #FFD700;
+        color: rgb(63, 63, 63);
+    }
+
+    .footer2 a:hover{
+        background-color: var(--secondary-color);
+        color: white;
+    }
+    
+}
+
+/* @media (max-width: 768px) {
+     nav ul.show {
+        display: flex;
+    } 
+} */
