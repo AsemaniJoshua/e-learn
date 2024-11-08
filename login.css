@@ -195,6 +195,22 @@ nav a:hover,.dropdown:hover .dropbtn{
 }
 
 
+#dont-have-account{
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#dont-have-account a{
+    text-decoration: none;
+}
+
+#dont-have-account a:hover{
+    text-decoration: underline;
+}
+
 
 
 
