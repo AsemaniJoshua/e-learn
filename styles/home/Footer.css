@@ -1,0 +1,119 @@
+    /* Footer */
+    .footer{
+        background-color: #fcf5f5;
+        color: black;
+    }
+    
+    .footer-row{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: relative;
+        left: 25%;
+    }
+    
+    .footer1{
+        padding: 20px;
+        /* text-align: center; */
+        margin-top: 60px;
+    }
+    
+    /* .footer1 p{
+        font-size: 18px;
+        margin-top: 20px;
+    } */
+    
+    
+    .footer2{
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .footer2 li{
+        margin: 20px;
+    }
+    
+    .footer2 h3{
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .footer2 ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .footer2 li{
+        margin-bottom: 20px;
+    }
+    .footer2 a{
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .footer2 a:hover{
+        background-color: var(--secondary-color);
+        color: white;
+    }
+    .footer2 svg{
+        width: 40px;
+    }
+    
+    .footer3{
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .footer3 h3{
+        font-size: 24px;
+        margin-top: 35px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .footer3 div{
+        margin-bottom: 20px;
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .footer3 svg{
+        font-weight: bold;
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    
+    
+    .copyrigth{
+        background-color: #001F3F;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+@media (max-width: 992px){
+
+
+
+.footer2 a:hover{
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.footer-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+}

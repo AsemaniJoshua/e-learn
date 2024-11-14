@@ -1,0 +1,31 @@
+    /* About Us */
+
+    .about-us {
+        background-color: #fcf5f5;
+        padding: 80px 60px;
+        text-align: center;
+        margin-top: 30px;
+        /* margin-bottom: 60px; */
+    }
+    
+    .about-us img{
+        gap: 40px;
+    }
+    
+    .about-us h2{
+        font-size: 36px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .about-us p{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+@media (max-width: 992px) {
+
+
+
+    
+}
