@@ -46,6 +46,9 @@
     
     <main id="Main">
 
+
+        <!-- Dashboard Section -->
+
        <section id="Dashboard">
             <section class="Graph">
                     
@@ -57,10 +60,59 @@
         
                 <canvas id="myChart2" style="width:50%;max-width:500px;"></canvas>
                 <canvas id="myChart3" style="width:50%;max-width:500px"></canvas>
-            </section>
-
-                                
+            </section>                      
        </section>
+
+
+
+
+       <!-- Settings Section -->
+
+        <section id="Settings">
+            <h1>Settings</h1>
+            
+            <!-- Personal Information Div In Settings Section -->
+            <div>
+
+                <h3>Personal Information</h3>
+
+                <div>
+                    <label>Name:</label>
+                    <label><?php  
+                        echo "This is your name";
+                    ?></label>
+                    <button>Edit</button>
+                </div>
+
+                <div>
+                    <label>Email:</label>
+                    <label><?php  
+                        echo "This is your Email";
+                    ?></label>
+                    <button>Edit</button>
+                </div>
+
+                <div>
+                    <button>Change Password</button>
+                </div>
+            </div>
+
+
+
+            <!-- Profile Picture Div In Settings Section -->
+
+            <div>
+                <h3>Profile Picture</h3>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <input type="file" name="profilePicture" id="profilePicture" accept="image/*">
+                    <button>Upload</button>
+                </form>
+            </div>
+        </section>
+
+
+
+
 
     
     </main>
