@@ -1,0 +1,149 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+}
+
+.sidePanel{
+    background-color: rgba(1, 1, 48, 0.966);
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    z-index: 1000;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border-right: 3px solid rgba(1, 1, 48, 0.966);
+}
+#sidePanelSection{
+    display: block;
+}
+
+.logo{
+    border-radius: 90%;
+    width: 160px;
+    height: 150px;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-left: 20px;
+}
+nav ul li{
+    font-size: 20px;
+    font-weight: 500;
+    list-style-type: none;
+}
+nav ul li button{
+    text-decoration: none;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.active{
+    color: rgb(226, 14, 226);
+    border: none;
+    background-color: inherit;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.active::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40%;
+    height: 2px;
+    background-color: rgb(226, 14, 226);
+    margin-bottom: 5px;
+}
+nav ul li button:hover{
+    color: rgb(226, 14, 226); 
+}
+nav ul li button:hover::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40%;
+    height: 2px;
+    background-color: rgb(226, 14, 226);
+    cursor: pointer;
+}
+
+nav ul li button:visited{
+    background-color: #cecaca;
+}
+
+/* Main content */
+
+main{
+    margin-left: 250px; /* Same width as the side panel */ 
+    padding: 20px; 
+    width: calc(100% - 250px); /* Full width minus the side panel width */ 
+    height: 100vh; /* Full height */ 
+    background-color: #cecaca; /* Main section background color */ 
+    overflow: auto; /* Ensure content is scrollable */ 
+}
+
+
+
+
+
+
+/* Humburger menu */
+
+
+.humbergerMenuContainer{
+    position: absolute;
+    top: 10px;
+    left: 250px;
+    max-width: 50px;
+    padding: 8px 10px 5px 7px;
+    background-color: rgba(1, 1, 48, 0.966);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+}
+.humburgerMenu{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+}
+
+
+
+/* Graph */
+.Graph{
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Bar Graph */
+canvas{
+    background-color: white;
+    border: 2px solid white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    z-index: 500;
+    border-radius: 20px;
+}

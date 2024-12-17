@@ -1,233 +1,199 @@
 :root {
     --primary-color: #FFD700;
     --secondary-color: #001F3F;
-    --tertiary-color: #F5F5DC;
+    --tertiary-color: ##fcf5f5;
     --button-color: #c5a800;
 }
 
-
-#a {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header {
-    background-color: #001F3F;
-    padding: 20px;
-    /* box shadow */
-    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.3);
-    height: 110px;
-}
-
-/* .logo{
-    background-color:#FFD700 ;
-} */
-
-#logo {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-right: auto;
-    display: inline-block;
-    position: relative;
-    top: -10px;
-}
-
-
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
+*{
+    margin:0;
     padding: 0;
-    position: relative;
-    top: -15px;
-    left: -30px;
-    background-color: var(--secondary-color);
-    /* top: 70px;
-    left: -70px; */
+    box-sizing: border-box;
 }
 
-nav ul li .nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    margin-right: 10px;
-    font-size: 18px;
-    display: inline;
-}
-
-nav a:hover,
-.dropdown:hover .dropbtn {
-    background-color: #FFD700;
-    border-radius: 5px;
-    font-weight: bold;
-    color: black;
-}
-
-.dropdown .dropbtn {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    color: white;
-    /* padding: 14px 20px; */
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #001F3F;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #FFD700;
-    color: black;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-
-
-/* Our Courses */
-
-.course-header {
-    position: relative;
-    text-align: center;
-    /* margin: 20px 20px; */
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-.course-header:before,
-.course-header:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 10%;
-    border-bottom: 3px solid #FFD700;
+#courseDetailsImg{
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-}
-.course-header:before {
-    left: 30%;
-}
-.course-header:after {
-    right: 30%;
-}
-.course-header span {
-    background: #fff;
-    padding: 0 10px;
-    font-size: 32px;
-    font-weight: bold;
+    margin-top: 30px;
 }
 
-
-
-
-/* Footer */
-
-
-.footer {
-    background-color: #fcf5f5;
-    color: black;
-}
-
-.footer1 {
-    padding: 20px;
+.welcomeHeader{
     text-align: center;
-    margin-top: 60px;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
-/* .footer1 p{
-    font-size: 18px;
-    margin-top: 20px;
+.welcomeDesc{
+    text-align: center;
+}
+
+
+
+
+/* Details Of Individual Courses */
+
+details{
+    position: relative;
+    margin-top: 60px;
+    margin-left: 6px;
+    z-index: 50;
+    background-color: #fcf5f5;
+    border: 2px solid #dcdddf;
+    border-radius: 15px;
+    max-width: 97vw;
+}
+
+/* summary::before { 
+    content: '👉 '; 
+    /* Icon when details are open 
 } */
 
+/* details[open] summary::before { 
+    content: '😍 '; 
+    /* Icon when details are open  
+} */
 
-.footer2 {
-    padding: 20px;
+summary{
     text-align: center;
-    margin-top: 20px;
-}
-
-.footer2 h3 {
-    font-size: 24px;
-    margin-top: 30px;
-    margin-bottom: 10px;
     font-weight: bold;
-    text-decoration: underline;
+    font-size: 25px;
+    padding: 20px 0px;
 }
 
-.footer2 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+#webDev1Img{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
 }
 
-.footer2 li {
-    margin-bottom: 20px;
+.courseDetails{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.courseDetails h2{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 30px;
 }
 
-.footer2 a {
-    color: black;
-    text-decoration: none;
+.courseDetails p{
+    text-align: center;
     font-size: 18px;
-    padding: 10px 20px;
+    margin-bottom: 30px;
+}
+
+.courseDetails h3{
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.courseDetails ul li{
+    margin-bottom: 30px;
+}
+
+.courseDetails ul li span{
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.enroll{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.enroll a{
+    text-decoration: none;
+}
+
+.enrollBtn{
+    padding: 10px 15px;
     border-radius: 5px;
-}
-
-.footer2 a:hover {
-    background-color: #FFD700;
-}
-
-.footer3 {
-    padding: 20px;
     text-align: center;
-    margin-top: 20px;
-}
-
-.footer3 h3 {
-    font-size: 24px;
-    margin-top: 35px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.footer3 div {
-    margin-bottom: 20px;
-    display: block;
-    margin-top: 20px;
-    text-align: center;
+    background-color: var(--button-color);
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
-.footer3 svg {
+.enrollBtn:hover{
+    background-color: var(--primary-color);
+    color: black;
     font-weight: bold;
-    font-size: 24px;
-    margin-right: 10px;
+    font-size: 18px;
 }
 
 
-.copyrigth {
-    background-color: #001F3F;
-    color: white;
-    padding: 20px;
-    text-align: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+    .welcome{
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+    }
+    #courseDetailsImgDiv{
+        width: 47%;
+        order: 2;
+    }
+    .intro{
+        order: 1;
+        width: 50%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .welcomeHeader{
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-size: 36px;
+    }
+    .welcomeDesc{
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    #courseDetailsImg{
+        height: 400px;
+    }
+
+    summary{
+        text-align: left;
+        font-weight: bold;
+        font-size: 25px;
+        margin-left: 30px;
+    }
+
+    details{
+        margin-left: 20px;
+    }
+
+    #webDev1ImgDiv{
+        order: 1;
+        width: 47%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .courseDetails{
+        order: 2;
+        width: 50%;
+    }
+
+    .detailsDiv{
+        display: flex;
+        flex-direction: row;
+    }
 }
