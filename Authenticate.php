@@ -1,10 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+</head>
+<body>
+    
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $recaptchaResponse = $_POST['g-recaptcha-response'];
     // $secretKey = 'YOUR_SECRET_KEY';
     $userIp = $_SERVER['REMOTE_ADDR'];
-    $verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=6LcyQWsqAAAAAMuqgUKGQy67lB5W2L2FT2Aqt8L9&response={$recaptchaResponse}&remoteip={$userIp}";
+    $verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=6LfEFJ4qAAAAAJ8hJ6_CfblpMyrIkFcJd6F1y1vK&response={$recaptchaResponse}&remoteip={$userIp}";
 
     $response = file_get_contents($verificationUrl);
     $responseData = json_decode($response);
@@ -35,3 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+</body>
+</html>
+
+

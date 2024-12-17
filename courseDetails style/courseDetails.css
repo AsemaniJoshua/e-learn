@@ -46,15 +46,15 @@ details{
     max-width: 97vw;
 }
 
-summary::before { 
+/* summary::before { 
     content: '👉 '; 
-    /* Icon when details are open */ 
-}
+    /* Icon when details are open 
+} */
 
-details[open] summary::before { 
+/* details[open] summary::before { 
     content: '😍 '; 
-    /* Icon when details are open */ 
-}
+    /* Icon when details are open  
+} */
 
 summary{
     text-align: center;
@@ -125,6 +125,10 @@ summary{
     font-weight: bold;
     font-size: 18px;
 }
+
+
+
+
 
 
 
