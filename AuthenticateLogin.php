@@ -32,6 +32,7 @@
                     $_SESSION['Student_FullName'] = $Student_FullName;
                     $_SESSION['Student_Email'] = $Student_Email;
                     header("Location: Dashboard.php");
+                    exit();
                 }
             }
 
@@ -59,6 +60,7 @@
                     $_SESSION['Instructor_Email'] = $Instructor_Email;
                     $_SESSION['Instructor_Skills'] = $Instructor_Skills;
                     header("Location: Dashboard.php");
+                    exit();
                 }
             }
 
