@@ -104,19 +104,19 @@
 
     <div id="student" class="form-container mb-5">
         <h2>Student Login</h2>
-        <form action="Authenticate.php" method="POST" id="recap">
+        <form action="AuthenticateLogin.php" method="POST" id="recap">
             <label for="student-email">Email:</label>
             <input type="email" id="student-email" name="student-email" required>
             <label for="student-password">Password:</label>
             <input type="password" id="student-password" name="student-password" required>
             <div class="g-recaptcha" data-sitekey="6LfEFJ4qAAAAABXNziRZaGgVgCDBOiqxaviJapK7">
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" name="StudentLogin">Login</button>
         </form>
     </div>
     <div id="instructor" class="form-container mb-5" style="display: none;">
         <h2>Instructor Login</h2>
-        <form action="Authenticate.php" method="POST" id="recap">
+        <form action="AuthenticateLogin.php" method="POST" id="recap">
             <label for="instructor-email">Email:</label>
             <input type="email" id="instructor-email" name="instructor-email" required>
             <label for="instructor-password">Password:</label>
@@ -124,7 +124,7 @@
             <!-- <label for="instructor-id">Instructor ID:</label>
             <input type="text" id="instructor-id" name="instructor-id" required> -->
             <div class="g-recaptcha" data-sitekey="6LfEFJ4qAAAAABXNziRZaGgVgCDBOiqxaviJapK7"></div>
-            <button type="submit">Login</button>
+            <button type="submit" name="InstructorLogin">Login</button>
         </form>
     </div>
 

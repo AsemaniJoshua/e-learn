@@ -15,7 +15,6 @@
 body{
     background-color: #F5F5DC;
     font-family: Arial, sans-serif;
-    width: 100vw;
 }
 #preloader {
     display: flex;
@@ -69,7 +68,7 @@ nav ul{
     padding: 0;
     position: relative;
     top: -15px;
-    left: -30px;
+    left: -40px;
     background-color: var(--secondary-color);
     /* top: 70px;
     left: -70px; */
@@ -158,12 +157,12 @@ nav .menu-toggle .bar {
     overflow: hidden;
 } */
 
-.dropdown .dropbtn {
+/* .dropdown .dropbtn {
     cursor: pointer;
     border: none;
     outline: none;
     color: white;
-    /* padding: 14px 20px; */
+    /* padding: 14px 20px; 
     background-color: inherit;
     font-family: inherit;
     margin: 0;
@@ -193,7 +192,7 @@ nav .menu-toggle .bar {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
+} */
 
 
 /* Hero Section */
@@ -205,7 +204,7 @@ nav .menu-toggle .bar {
 }
 .hero-text{
     width: 49%;
-    /* padding: 30px; */
+    /* /* padding: 30px;  */
     display: inline-block;
     gap: 20px;
     padding: 20px;
@@ -242,8 +241,8 @@ nav .menu-toggle .bar {
 .hero-image{
     width: 49%;
     display: inline-block;
-    /* padding-top: 80px; */
-}   
+    /* padding-top: 80px;  */
+}    
 
 
 
@@ -285,11 +284,6 @@ nav .menu-toggle .bar {
         font-weight: bold;
         color: black;
     } 
-
-    .hero-text button:hover{
-        background-color: #FFD700;
-        color: rgb(63, 63, 63);
-    }
     
 }
 
