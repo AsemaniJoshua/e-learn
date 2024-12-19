@@ -2,12 +2,13 @@
     .footer{
         background-color: #fcf5f5;
         color: black;
+        max-width: 99%;
     }
     
-    .footer-row{
+    /* .footer-row{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-    }
+    } */
     
     .footer img{
         width: 150px;
@@ -111,9 +112,9 @@
     color: white;
 }
 
-.footer-row{
+/* .footer-row{
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+} */
 
 }

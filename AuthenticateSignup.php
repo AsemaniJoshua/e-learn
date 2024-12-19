@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     
@@ -33,7 +33,7 @@ if(isset($StudentSignUpBtn) || $_SERVER['REQUEST_METHOD'] == 'POST'){
             title: 'Success!',
             text: 'Data Successfully Collected! Redirecting you to the next page',
             icon: 'success',
-            timer: 2000,
+            timer: 5000,
             showConfirmButton: false
         }).then(function() {
             window.location.href = 'login.html'; // Redirect to your login page URL
@@ -46,7 +46,7 @@ if(isset($StudentSignUpBtn) || $_SERVER['REQUEST_METHOD'] == 'POST'){
             title: 'Error!',
             text: 'An error occurred while collecting your data.',
             icon: 'error'
-            timer: 2000,
+            timer: 5000,
         }).then(function() {
             window.history.back();
         });
