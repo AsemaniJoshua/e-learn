@@ -18,12 +18,12 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
     <!-- <link rel="stylesheet" href="output.css"> -->
-    <link rel="stylesheet" href="styles/home/style.css">
+    <!-- <link rel="stylesheet" href="styles/home/style.css">
     <link rel="stylesheet" href="styles/home/Footer.css">
-    <link rel="stylesheet" href="courseDetails style/courseDetails.css">
+    <link rel="stylesheet" href="courseDetails style/courseDetails.css"> -->
     <!-- Bootstrap Css-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/feather-icons"></script> -->
 
     <script> 
     // Prevent back navigation 
@@ -95,8 +95,8 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
        <!-- Settings Section -->
 
-        <section id="Settings" class="Settings">
-            <h1 id="SettingsH1">Settings</h1>
+        <!-- <section id="Settings" class="Settings">
+            <h1 id="SettingsH1">Settings</h1> -->
             
             <!-- Personal Information Div In Settings Section -->
             <!-- <div>
@@ -105,12 +105,12 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
                 <div>
                     <label>Name:</label>
-                    <label><?php  
+                    <label>
                         // echo "This is your name";
-                    ?></label>
+                    </label>
                     <button>Edit</button>
                     <div class="ChangeNamePopUp">
-                        <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
+                        <form action="" method="post">
                             <input type="text" name="ChangeName" id="ChangeName">
                             <br>
                             <button type="submit" name="SaveName">Save</button>
@@ -120,12 +120,12 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
                 <div>
                     <label>Email:</label>
-                    <label><?php  
+                    <label>
                         // echo "This is your Email";
-                    ?></label>
+                    </label>
                     <button>Edit</button>
                     <div class="ChangeEmailPopUp">
-                        <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
+                        <form action="" method="post">
                             <input type="email" name="ChangeEmail" id="ChangeEmail">
                             <br>
                             <button type="submit" name="SaveEmail">Save</button>
@@ -136,7 +136,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <div>
                     <button>Change Password</button>
                     <div class="ChangePasswordPopUp">
-                        <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
+                        <form action="" method="post">
                             <input type="password" name="ChangePassword" id="ChangePassword">
                             <br>
                             <button type="submit" name="SavePassword">Save</button>
@@ -180,7 +180,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
     </div>
 
 
-    <!-- Individual Course Description 
+     Individual Course Description 
 
      Web dev 1 
 
@@ -425,7 +425,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
     <!-- End of Individual Course Description -->
 
-        </section>
+        <!-- </section> -->
 
 
 
@@ -449,11 +449,6 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>This is the individual course page. Here you can view the details of the course and enroll for it.</p>
             </div>
         </section> -->
-
-
-
-
-
     
     </main>
 
