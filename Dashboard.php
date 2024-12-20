@@ -453,7 +453,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
     </main>
 
 
-    <script src="./dashboard.js"></script>
+    <script src="js/Dashboard.js"></script>
     <script src="//code.tidio.co/wqykj04koewk5ditm2jn47uqejcv2xzu.js" async></script>
 
 </body>
