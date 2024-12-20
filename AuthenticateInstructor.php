@@ -27,7 +27,7 @@ if(isset($InstructorSignUpBtn) || $_SERVER['REQUEST_METHOD'] == 'POST'){
     $HashedInstructorPassword = password_hash($InstructorPassword, PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO instructor (Instructor_FullName, Instructor_Email, Instructor_pass,Instructor_Skills) VALUES (?,?,?,?)");
-    $stmt->bind_param("sss",$InstructorName,$InstructorEmail,$HashedInstructorPassword,$InstructorSkills);
+    $stmt->bind_param("ssss",$InstructorName,$InstructorEmail,$HashedInstructorPassword,$InstructorSkills);
 
     if($stmt->execute()){
         echo "<script>
