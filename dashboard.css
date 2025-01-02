@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #001F3F;
+    --tertiary-color: ##fcf5f5;
+    --button-color: #c5a800;
+}
+
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -27,8 +35,8 @@ body{
 }
 
 .logo{
-    width: 70px;
-    height: 70px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
     margin-top: 80px;
     margin-left: 30px;
@@ -91,11 +99,36 @@ nav ul li button:visited{
     background-color: #cecaca;
 }
 
+
+/* DashboardNavbar */
+
+#DashboardNavbar{
+    width: 100%;
+    background-color: rgba(1, 1, 48, 0.966);
+    position: fixed;
+    top: 0;
+    left: 250px;
+    z-index: 1000;
+    height: 80px;
+}
+#SearchCourses{
+    width: 400px;
+    padding: 7px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+
+
 /* Main content */
 
 main{
     margin-left: 250px; /* Same width as the side panel */ 
-    padding: 20px; 
+    /* padding: 20px;  */
     width: calc(100% - 250px); /* Full width minus the side panel width */ 
     height: 100vh; /* Full height */ 
     background-color: #cecaca; /* Main section background color */ 
@@ -129,6 +162,59 @@ main{
 }
 
 
+/* Student Details */
+
+.StudentDetails{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+#StudentId{
+    background-color: white;
+    width: 400px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#StudentId h2{
+    font-weight: 700;
+    padding: 10px 0px;
+}
+#StudentId span{
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+#StudentName{
+    background-color: white;
+    width: 400px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#StudentName h2{
+    font-weight: 700;
+    padding: 10px 0px;
+}
+#StudentName span{
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Graph */
 .Graph{
@@ -152,16 +238,493 @@ canvas{
 
 /* Settings Section */
 
-/* .Settings{
+.Settings{
+    width: 100%;
+    padding: 30px;
+    margin: 20px 0px;
     background-color: white;
-    width: inherit;
-}
-
-#SettingsH1{
-    font-size: 20px;
-    color: black;
-}
-
-#Settings h3{
     font-size: 18px;
-} */
+}
+.SettingsH1{
+    font-weight: bold;
+    font-size: 40px;
+    padding: 20px 0px;
+}
+
+.PersonalInformationDiv h3{
+    font-weight: 800;
+    padding: 10px 0px;
+    font-size: 30px;
+}
+
+.ChangeNameDiv{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ChangeNameDiv button{
+    padding: 10px 30px;
+    background-color: rgb(122, 119, 119);
+    color: white;
+    font-weight: bold;
+    border: 2px dotted rgb(0, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.ChangeEmailDiv{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ChangeEmailDiv button{
+    padding: 10px 30px;
+    background-color: rgb(122, 119, 119);
+    color: white;
+    font-weight: bold;
+    border: 2px dotted rgb(0, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.ChangePasswordDiv h2{
+    font-weight: 800;
+    padding: 10px 0px;
+    font-size: 30px;
+}
+
+.ChangePasswordDiv button{
+    padding: 10px 30px;
+    background-color: rgb(122, 119, 119);
+    color: white;
+    font-weight: bold;
+    border: 2px dotted rgb(0, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px 0px;
+}
+
+.ProfilePicDiv h3{
+    font-weight: 800;
+    padding: 10px 0px;
+    font-size: 30px;
+    margin: 20px 0px;
+}
+
+.ProfilePicDiv form input{
+    font-size: 19px;
+    padding: 20px;
+}
+
+.ProfilePicDiv form button{
+    padding: 10px 30px;
+    background-color: rgb(122, 119, 119);
+    color: white;
+    font-weight: bold;
+    border: 2px dotted rgb(0, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+/* Course Catalog */
+
+#CourseCatalog{
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+}
+
+.welcome{
+    display: flex;
+    gap: 40px;
+}
+
+#courseDetailsImgDiv{
+    order: 2;
+    width: 80%;
+}
+
+#courseDetailsImg{
+    height: 400px;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+details{
+    position: relative;
+    margin-top: 60px;
+    margin-left: 6px;
+    z-index: 50;
+    background-color: #fcf5f5;
+    border: 2px solid #dcdddf;
+    border-radius: 15px;
+    max-width: 97vw;
+}
+
+summary{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 20px 0px;
+    cursor: pointer;
+}
+
+.intro{
+    order: 1;
+    width: 100%;
+    margin: auto 0px;
+    text-align: center;
+}
+
+.welcomeHeader{
+    font-weight: bold;
+    font-size: 40px;
+    margin: 10px 0px;
+}
+
+#webDev1ImgDiv{
+    order: 1;
+    width: 47%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.courseDetails{
+    order: 2;
+    width: 50%;
+}
+
+#webDev1Img{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    height: 400px;
+}
+
+.detailsDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.courseDetails h2{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.courseDetails p{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.courseDetails h3{
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.courseDetails ul li{
+    margin-bottom: 30px;
+}
+
+.courseDetails ul li span{
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.enroll{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.enroll a{
+    text-decoration: none;
+}
+
+.enrollBtn{
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.enrollBtn:hover{
+    background-color: var(--primary-color);
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+
+
+/* Individual Courses */
+
+#IndividualCourse{
+    background-color: white;
+    padding: 20px;
+}
+
+.IndividualCourseDetails{
+    width: 350px;
+    z-index: 100;
+    background-color: #fcf5f5;
+    border: 2px solid #dcdddf;
+    cursor: pointer;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.IndividualCourseDetails:hover{
+    transform: scale(1.05);
+}
+
+.IndividualCourseDetails img{
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.IndividualCourseDetails h2{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.IndividualCourseDetails button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px 20px 20px 0px;
+}
+
+.IndividualCourseDetails button:hover{
+    background-color: var(--primary-color);
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+/* Undisplaying Other Sections */
+
+#Settings{
+    display: none;
+}
+
+#CourseCatalog{
+    display: none;
+}
+
+#IndividualCourse{    
+    display: none;
+}
+
+
+
+
+
+/* Change Name PopUp */
+
+#ChangeNamePopUp{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+#ChangeNamePopUp form{
+    background-color: white;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#ChangeNamePopUp form input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #dcdddf;
+    font-size: 18px;
+}
+
+#ChangeNamePopUp form button{
+    padding: 10px 30px;
+    background-color: rgb(12, 199, 12);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ChangeNamePopUp form button:hover{
+    background-color: rgba(12, 199, 12, 0.562);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+/* Change Email PopUp */
+
+#ChangeEmailPopUp{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+#ChangeEmailPopUp form{
+    background-color: white;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#ChangeEmailPopUp form input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #dcdddf;
+    font-size: 18px;
+}
+
+#ChangeEmailPopUp form button{
+    padding: 10px 30px;
+    background-color: rgb(12, 199, 12);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ChangeEmailPopUp form button:hover{
+    background-color: rgba(12, 199, 12, 0.562);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* Change Password PopUp */
+
+
+#ChangePasswordPopUp{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+#ChangePasswordPopUp form{
+    background-color: white;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#ChangePasswordPopUp form input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #dcdddf;
+    font-size: 18px;
+}
+
+#ChangePasswordPopUp form button{
+    padding: 10px 30px;
+    background-color: rgb(12, 199, 12);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ChangePasswordPopUp form button:hover{
+    background-color: rgba(12, 199, 12, 0.562);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+/* Close PopUp Button */
+
+#closeChangeNamePopUp, #closeChangeEmailPopUp, #closeChangePasswordPopUp{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 100px;
+    cursor: pointer; 
+    color: #fff;  
+    background-color: #ff0000;  
+    padding: 5px 10px;
+    border: none; 
+    border-radius: 5px;
+}
+
+#closeChangeNamePopUp:hover, #closeChangeEmailPopUp:hover, #closeChangePasswordPopUp:hover{ 
+    background-color: #cc0000; /* Darker red on hover */ 
+}
