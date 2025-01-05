@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+
 <?php
 
     session_start();
@@ -8,7 +19,7 @@
                 title: 'Information!',
                 text: 'Please login and enroll in that course from the course catalogue!',
                 icon: 'info',
-                timer: 7000,
+                timer: 5000,
                 showConfirmButton: false
             }).then(function() {
                 window.location.href = 'login.html'; // Redirect to your Login page URL
@@ -154,3 +165,6 @@
     }
 
 ?>
+
+</body>
+</html>

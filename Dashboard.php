@@ -1,10 +1,10 @@
 <?php
-    // session_start();
+    session_start();
 
-    // if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
-    //     header("Location: login.html");
-    //     exit();
-    // }
+    if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
+        header("Location: login.html");
+        exit();
+    }
 
 ?>
 

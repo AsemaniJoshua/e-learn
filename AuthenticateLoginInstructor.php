@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+    session_start();
 
 ?>
 
@@ -18,22 +18,23 @@ session_start();
 
     include("ConnectDB.php");
 
-    $StudentEmail = $_POST['studentEmail'];
-    $StudentPassword = $_POST['studentPassword'];
+    if(isset($_POST['InstructorLogin'])){
 
-    if(isset($_POST['StudentLogin'])){
-        
+        $InstructorEmail = $_POST['instructorEmail'];
+        $InstructorPassword = $_POST['instructorPassword'];
+
         try{
-            $stmt = $conn->prepare("SELECT Student_Id,Student_FullName,Student_Email,Student_Pass FROM student WHERE Student_Email = ?");
-            $stmt->bind_param("s", $StudentEmail);
+            $stmt = $conn->prepare("SELECT Instructor_Id,Instructor_FullName,Instructor_Email,Instructor_pass,Instructor_Skills FROM instructor WHERE Instructor_Email = ?");
+            $stmt->bind_param("s", $InstructorEmail);
             $stmt->execute();
-            $stmt->bind_result($Student_Id,$Student_FullName,$Student_Email,$Student_Pass);
+            $stmt->bind_result($Instructor_Id,$Instructor_FullName,$Instructor_Email,$Instructor_pass,$Instructor_Skills);
             
             if($stmt->fetch()){
-                if(password_verify($StudentPassword, $Student_Pass)){
-                    $_SESSION['Student_Id'] = $Student_Id;
-                    $_SESSION['Student_FullName'] = $Student_FullName;
-                    $_SESSION['Student_Email'] = $Student_Email;
+                if(password_verify($InstructorPassword, $Instructor_pass)){
+                    $_SESSION['Instructor_Id'] = $Instructor_Id;
+                    $_SESSION['Instructor_FullName'] = $Instructor_FullName;
+                    $_SESSION['Instructor_Email'] = $Instructor_Email;
+                    $_SESSION['Instructor_Skills'] = $Instructor_Skills;
                     echo "<script>
                     Swal.fire({
                         icon:'success',
@@ -55,19 +56,10 @@ session_start();
         }
         catch(Exception $e){
             echo "Error: ". $e->getMessage();
-        }      
-                
-    
+        }
     }
-    
 
 ?>
 
 </body>
 </html>
-
-
-
-
-
-
