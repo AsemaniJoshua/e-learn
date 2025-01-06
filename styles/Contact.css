@@ -1,0 +1,293 @@
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #001F3F;
+    --tertiary-color: #F5F5DC;
+    --button-color: #c5a800;
+}
+
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F5F5DC;
+    font-family: Arial, sans-serif;
+    margin: 40px 90px 90px 90px;
+}
+#a{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header{
+    background-color: #001F3F;
+    padding: 20px;
+    /* box shadow */
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.3);
+    height: 110px;
+}
+/* .logo{
+    background-color:#FFD700 ;
+} */
+
+#logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: auto;
+    display: inline-block;
+    position: relative;
+    top: -10px;
+}
+
+
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -15px;
+    left: -40px;
+    background-color: var(--secondary-color);
+    /* top: 70px;
+    left: -70px; */
+}
+
+nav ul li .nav-link{
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+nav a:hover,.dropdown:hover .dropbtn{
+    background-color: #FFD700;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+} 
+
+#signup{
+    background-color: var(--tertiary-color);
+    border: 2px solid var(--tertiary-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+
+
+/* Contact Us Container */
+
+.ContactUsContainer{
+    margin: 30px 0px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ContactUsContainer form {
+    width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fcfcfc9d;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+}
+
+.ContactUsContainer form h2{
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px 0px 20px 0px;
+}
+
+.ContactUsContainer form label{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ContactUsContainer form input{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.ContactUsContainer form button{
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ContactUsContainer form button:hover{
+    background-color: #001f3fb9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+    /* Footer */
+    .footer{
+        background-color: #fcf5f5;
+        color: black;
+        max-width: 99%;
+    }
+    
+    /* .footer-row{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    } */
+    
+    .footer img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: relative;
+        left: 25%;
+    }
+    
+    .footer1{
+        padding: 20px;
+        /* text-align: center; */
+        margin-top: 60px;
+    }
+    
+    /* .footer1 p{
+        font-size: 18px;
+        margin-top: 20px;
+    } */
+    
+    
+    .footer2{
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .footer2 li{
+        margin: 20px;
+    }
+    
+    .footer2 h3{
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .footer2 ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .footer2 li{
+        margin-bottom: 20px;
+    }
+    .footer2 a{
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .footer2 a:hover{
+        background-color: var(--secondary-color);
+        color: white;
+    }
+    .footer2 svg{
+        width: 40px;
+    }
+    
+    .footer3{
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .footer3 h3{
+        font-size: 24px;
+        margin-top: 35px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .footer3 div{
+        margin-bottom: 20px;
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .footer3 svg{
+        font-weight: bold;
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    
+    
+    .copyrigth{
+        background-color: #001F3F;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+@media (max-width: 992px){
+
+
+
+.footer2 a:hover{
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* .footer-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} */
+
+}

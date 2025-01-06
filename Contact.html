@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Learn | Login</title>
-    <link rel="stylesheet" href="styles/login.css">
-    <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+    <title>Contact Us | E-LEARN</title>
+    <link rel="stylesheet" href="./styles/Contact.css">
     <!-- Bootstrap Css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
-  <body>
+    <!-- Shoelace CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/shoelace-autoloader.js"></script>
+</head>
+<body>
 
-    <!-- Navigation Bar -->
-     <!-- Header -->
+
+    <!-- NavBar -->
+
+    <!-- Header -->
     <div id="a">
+
         <header>
 
 
@@ -31,7 +35,7 @@
                             <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#courses">Courses</a>
+                            <a class="nav-link" href="index.html#courses">Courses</a>
                         </li>
                         
                         <!-- <li class="nav-item">
@@ -41,13 +45,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="FAQ.html">FAQ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
-                        </li>
 
                         <!-- <li class="nav-item">
-                            <a class="nav-link" href="Signup.html" id="signup">Sign up</a>
+                            <a class="nav-link" href="contact.html">Contact Us</a>
                         </li> -->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Signup.html" id="signup">Sign up</a>
+                        </li>
                         
                     </ul>
                 </div>
@@ -92,55 +97,55 @@
     </div>
 
 
+    <!-- Contact Us Using Inline Links -->
 
-    <!-- Login Form -->
-    
-    <div class="tab-container">
-        <button class="tab-button" onclick="showForm('student')">Log in as a Student</button>
-        <button class="tab-button" onclick="showForm('instructor')">Log in as an Instructor</button>
-    </div>
+    <div class="ContactUsContainer">
+        <p>We'd love to hear from you! Whether you have questions about our courses, feedback on your experience, or any other inquiries, feel free to reach out to us.</p>
 
-    
+        <p>Our team is here to assist you! Expect a response within 24-48 hours.</p>
 
-    <div id="student" class="form-container mb-5">
-        <h2>Student Login</h2>
-        <form action="AuthenticateLogin.php" method="post" id="recap">
-            <label for="studentEmail">Email:</label>
-            <input type="email" name="studentEmail" id="studentEmail"  required>
-            <label for="studentPassword">Password:</label>
-            <input type="password" name="studentPassword" id="studentPassword"  required>
-            <!-- <div class="g-recaptcha" data-sitekey="6LfEFJ4qAAAAABXNziRZaGgVgCDBOiqxaviJapK7">
-            </div> -->
-            <button type="submit" name="StudentLogin">Login</button>
-        </form>
-    </div>
-    <div id="instructor" class="form-container mb-5" style="display: none;">
-        <h2>Instructor Login</h2>
-        <form action="AuthenticateLoginInstructor.php" method="post" id="recap">
-            <label for="instructorEmail">Email:</label>
-            <input type="email" id="instructorEmail" name="instructorEmail" required>
-            <label for="instructorPassword">Password:</label>
-            <input type="password" id="instructorPassword" name="instructorPassword" required>
-            <!-- <label for="instructor-id">Instructor ID:</label>
-            <input type="text" id="instructor-id" name="instructor-id" required> -->
-            <!-- <div class="g-recaptcha" data-sitekey="6LfEFJ4qAAAAABXNziRZaGgVgCDBOiqxaviJapK7"></div> -->
-            <button type="submit" name="InstructorLogin">Login</button>
+        <p>Check out our <a href="FAQ.html">FAQs</a> FAQs for quick answers.</p>
+
+        <form action="Contact.php" method="post">
+            <h2>Contact Us</h2>
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="ContactName" required><br><br>
+
+            <label for="Email">Email:</label><br>
+            <input type="email" id="Email" name="ContactEmail" required><br><br>
+
+            <label for="Message">Message:</label><br>
+            <textarea id="Message" name="ContactMessage" rows="4" cols="50" required></textarea><br><br>
+
+            <button type="submit" name="ContactSubmit">Submit</button>
+
+
         </form>
     </div>
 
-    <div id="dont-have-account" class="my-5">
-        Don't have an account? <a href="Signup.html">Sign up</a>
-    </div>
 
 
-    <!--  Footer -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+
     <div class="footer">
-        <div class="row">
-            <div class="col-sm-4 footer1">
+        <div class="row footer-row">
+            <div class="col-md-4 footer1">
                 <img src="images/Logo.png" alt="logo" class="img-fluid rounded-circle">
                 
             </div>
-            <div class="col-sm-4 footer2">
+            <div class="col-md-4 footer2">
                 <h3>Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -149,21 +154,17 @@
                     <li><a href="blog.html">FAQ</a></li>
                 </ul>
                 <div>
-                    <a href="https://www.linkedin.com/company/e-learn-community/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-                      </svg></a>
+                    <a href="https://www.linkedin.com/company/e-learn-community/" target="_blank"><i data-feather="linkedin"></i></a>
                     <a href="https://www.discord.gg/elearn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
                             <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
                         </svg></a>
 
                     <a href="https://twitter.com/elearncommunity">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
-                        </svg></a>
+                        <i data-feather="twitter"></i></a>
                 </div>
             </div>
-            <div class="col-sm-4 footer3">
+            <div class="col-md-4 footer3">
                 <h3>Contact Us</h3>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
@@ -188,9 +189,8 @@
 </div>
     
 
-    <script src="//code.tidio.co/wqykj04koewk5ditm2jn47uqejcv2xzu.js" async></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
-  </body>
+</div> <!-- End of Content Div And Web Page-->
+
+    
+</input>
 </html>

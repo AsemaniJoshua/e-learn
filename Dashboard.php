@@ -1,11 +1,6 @@
 <?php
 
-session_start();
-
-if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
-    header("Location: login.html");
-    exit();
-}
+    session_start();
 
 ?>
 
@@ -32,25 +27,37 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
         history.go(1); 
     }; 
     </script>
-    
+
+
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
 
+
 </head>
 <body>
+
+<?php
+
+if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
+    header("Location: login.html");
+    exit();
+}
+
+
+?>
 
     <!-- Side Panel -->
 
     <section id="sidePanelSection">
         <section class="sidePanel" >
             <div>
-                <img src="images/Logo.png" alt="Logo" class="logo">
+                <img src="images/profile.png" alt="Logo" class="logo">
             </div>
 
             <nav>
                 <ul>
-                    <li><button class="active">Dashboard</button></li>
+                    <li><button class="active" id="DashboardBtn">Dashboard</button></li>
                     <li><button id="MyCoursesBtn">My Courses</button></li>
                     <li><button id="CourseCatalogBtn">Course Catalog</button></li>
                     <li><button id="SettingsBtn">Settings</button></li>
@@ -64,9 +71,13 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
     <!-- Humberger Menu -->
 
-    <div class="humbergerMenuContainer" id="humbergerMenuContainer">
+    <!-- <div class="humbergerMenuContainer" id="humbergerMenuContainer">
         <img src="images/Humberger (2).png" alt="Hamburger Icon" class="humburgerMenu" id="humburgerMenu">
-    </div>
+    </div> -->
+
+    
+
+    
 
     <!-- Main Content -->
 
@@ -74,9 +85,30 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
     <main id="Main">
 
 
+        <!-- Dashboard Navbar -->
+
+        <div id="DashboardNavbar">
+            <input type="search" name="SearchCourses" id="SearchCourses" placeholder="Search for Courses">
+        </div>
+
+        <!-- Student Details -->
+
+        <section id="StudentDetails" class="StudentDetails">
+            <div id="StudentId">
+                <h2>Student Id</h2>
+                <span>5</span>
+            </div>
+
+            <div id="StudentName">
+                <h2>Student Name</h2>
+                <span>Ama Owusuwaa</span>
+            </div>
+        </section>
+
+
         <!-- Dashboard Section -->
 
-       <section id="Dashboard">
+       <section id="DashboardGraph">
             <section class="Graph">
                     
                 <canvas id="myChart" style="width:50%;max-width:500px"></canvas>
@@ -95,68 +127,52 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
        <!-- Settings Section -->
 
-        <!-- <section id="Settings" class="Settings">
-            <h1 id="SettingsH1">Settings</h1> -->
+        <section id="Settings" class="Settings">
+            <h1 class="SettingsH1">Settings</h1>
             
             <!-- Personal Information Div In Settings Section -->
-            <!-- <div>
+            <div class="PersonalInformationDiv">
 
                 <h3>Personal Information</h3>
 
-                <div>
-                    <label>Name:</label>
-                    <label>
-                        // echo "This is your name";
-                    </label>
-                    <button>Edit</button>
-                    <div class="ChangeNamePopUp">
-                        <form action="" method="post">
-                            <input type="text" name="ChangeName" id="ChangeName">
-                            <br>
-                            <button type="submit" name="SaveName">Save</button>
-                        </form>
+                <div class="ChangeNameDiv">
+                    <div>
+                        <label>Name:</label>
+                        <label>
+                            Name Goes Here
+                        </label>
                     </div>
+                    <button id="ChangeNameBtn">Edit</button>                    
                 </div>
 
-                <div>
-                    <label>Email:</label>
-                    <label>
-                        // echo "This is your Email";
-                    </label>
-                    <button>Edit</button>
-                    <div class="ChangeEmailPopUp">
-                        <form action="" method="post">
-                            <input type="email" name="ChangeEmail" id="ChangeEmail">
-                            <br>
-                            <button type="submit" name="SaveEmail">Save</button>
-                        </form>
+                <div class="ChangeEmailDiv">
+                    <div>
+                        <label>Email:</label>
+                        <label>
+                            Email Goes Here
+                        </label>
                     </div>
+                    <button id="ChangeEmailBtn">Edit</button>                   
                 </div>
 
-                <div>
-                    <button>Change Password</button>
-                    <div class="ChangePasswordPopUp">
-                        <form action="" method="post">
-                            <input type="password" name="ChangePassword" id="ChangePassword">
-                            <br>
-                            <button type="submit" name="SavePassword">Save</button>
-                        </form>
-                    </div>
+                <div class="ChangePasswordDiv">
+                    <h2>Change Password</h2>
+                    <button id="ChangePasswordBtn">Change Password</button>                   
                 </div>
-            </div> -->
+            </div>
 
 
 
             <!-- Profile Picture Div In Settings Section -->
 
-            <!-- <div>
+            <div class="ProfilePicDiv">
                 <h3>Profile Picture</h3>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="file" name="profilePicture" id="profilePicture" accept="image/*">
                     <button type="submit" name="UploadProfilePicture">Upload</button>
                 </form>
             </div>
-        </section> -->
+        </section>
 
 
 
@@ -164,10 +180,10 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
         <!-- Course Catalog Section -->
 
-        <!-- <section id="CourseCatalog"> -->
+        <section id="CourseCatalog">
 
             <!-- Welcome description -->
-<!-- 
+
     <div class="welcome">
         <div id="courseDetailsImgDiv">
             <img src="images/courseDetailsImg.png" alt="courseDetailsImg" id="courseDetailsImg">    
@@ -180,9 +196,9 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
     </div>
 
 
-     Individual Course Description 
+     <!-- Individual Course Description  -->
 
-     Web dev 1 
+     <!-- Web dev 1  -->
 
     <details>
         <summary class="summary">Web Development 1</summary>
@@ -208,9 +224,9 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll be able to create simple yet attractive webpages, laying a solid foundation for more advanced topics.</p>
     
                 <div class="enroll">
-                    <a href="CheckSate.php">
-                        <button class="enrollBtn">Enroll Now (Free)</button>
-                    </a>
+                    <form action="CheckSate.php" method="POST">
+                        <button class="enrollBtn" type="submit" name="WebDev1">Enroll Now (Free)</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -218,7 +234,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
 
 
-    Web Dev 2 
+    <!-- Web Dev 2  -->
 
     <details>
         <summary class="summary">Web Development 2</summary>
@@ -244,9 +260,9 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll be well-versed in creating more complex, visually stunning, and highly interactive websites.</p>
 
                 <div class="enroll">
-                    <a href="CheckSate.php">
-                        <button class="enrollBtn">Enroll Now ($20)</button>
-                    </a>
+                    <form action="CheckSate.php" method="POST">
+                        <button class="enrollBtn" type="submit" name="WebDev2">Enroll Now ($20)</button>
+                    </form>
                 </div>
 
             </div>
@@ -258,7 +274,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
     
 
     
-     Web Dev 3 
+     <!-- Web Dev 3  -->
 
     <details>
         <summary class="summary">Web Development 3</summary>
@@ -285,9 +301,9 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll have the skills to develop high-performance, scalable, and maintainable frontend applications.</p>
 
                 <div class="enroll">
-                    <a href="CheckSate.php">
-                        <button class="enrollBtn">Enroll Now ($50)</button>
-                    </a>
+                    <form action="CheckSate.php" method="POST">
+                        <button class="enrollBtn" type="submit" name="WebDev3">Enroll Now ($50)</button>
+                    </form>
                 </div>
                 
             </div>
@@ -299,7 +315,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
 
 
-     Backend 1 
+     <!-- Backend 1  -->
 
     
     <details>
@@ -327,9 +343,9 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll be able to set up a basic backend server, connect it to a database, and build simple APIs.</p>
 
                 <div class="enroll">
-                    <a href="CheckSate.php">
-                        <button class="enrollBtn">Enroll Now (Free)</button>
-                    </a>
+                    <form action="CheckSate.php" method="POST">
+                        <button class="enrollBtn" type="submit" name="Backend1">Enroll Now (Free)</button>
+                    </form>
                 </div>
                 
             </div>
@@ -341,7 +357,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
 
 
-     Backend 2 
+     <!-- Backend 2  -->
 
     <details>
         <summary class="summary">Backend Development 2</summary>
@@ -369,9 +385,9 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll be proficient in building and managing more advanced backend systems, ensuring they are secure and efficient.</p>
 
                 <div class="enroll">
-                    <a href="CheckSate.php">
-                        <button class="enrollBtn">Enroll Now ($20)</button>
-                    </a>
+                    <form action="CheckSate.php" method="POST">
+                        <button class="enrollBtn" type="submit" name="Backend2">Enroll Now ($20)</button>
+                    </form>
                 </div>
 
             </div>
@@ -383,7 +399,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
 
 
-     Backend 3 
+     <!-- Backend 3  -->
 
     <details style="margin-bottom: 80px;">
         <summary class="summary">Backend Development 3</summary>
@@ -411,9 +427,9 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll have the expertise to design, build, and maintain complex, scalable, and secure backend systems.</p>
 
                 <div class="enroll">
-                    <a href="CheckSate.php">
-                        <button class="enrollBtn">Enroll Now ($50)</button>
-                    </a>
+                    <form action="CheckSate.php" method="POST">
+                        <button class="enrollBtn" type="submit" name="Backend3">Enroll Now ($50)</button>
+                    </form>
                 </div>
 
             </div>
@@ -421,11 +437,11 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
             
         </div>
 
-    </details> -->
+    </details> 
 
     <!-- End of Individual Course Description -->
 
-        <!-- </section> -->
+    </section>
 
 
 
@@ -442,18 +458,62 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
 
         <!-- Individual Course-->
 
-        <!-- <section id="IndividualCourse">
-            <div class="courseDetails">
+        <section id="IndividualCourse">
+            <div class="IndividualCourseDetails">
                 <img src="" alt="">
                 <h2>Individual Course</h2>
                 <p>This is the individual course page. Here you can view the details of the course and enroll for it.</p>
+                <button id="Learn">Learn</button>
             </div>
-        </section> -->
+        </section>
     
     </main>
 
+    <!-- Change Name PopUp  -->
 
-    <script src="js/Dashboard.js"></script>
+    <div id="ChangeNamePopUp">
+        <form action="" method="post">
+            <button type="button" id="closeChangeNamePopUp">&times;</button>
+            <label for="ChangeName">Change Name:</label>
+            <br>
+            <input type="text" name="ChangeName" id="ChangeName">
+            <br>
+            <button type="submit" name="SaveName">Save</button>
+        </form>
+    </div>
+
+    <!-- Change Email PopUp -->
+
+    <div id="ChangeEmailPopUp">
+        <form action="" method="post">
+            <button type="button" id="closeChangeEmailPopUp">&times;</button>
+            <label for="ChangeEmail">Change Email:</label>
+            <br>
+            <input type="email" name="ChangeEmail" id="ChangeEmail">
+            <br>
+            <button type="submit" name="SaveEmail">Save</button>
+        </form>
+    </div>
+
+    <!-- Change Password PopUp -->
+
+    <div id="ChangePasswordPopUp">
+        <form action="" method="post">
+            <button type="button" id="closeChangePasswordPopUp">&times;</button>
+            <label for="ChangeOldPassword">Old Password:</label>
+            <br>
+            <input type="password" name="ChangeOldPassword" id="ChangeOldPassword">
+            <br>
+            <label for="ChangeNewPassword">New Password:</label>
+            <br>
+            <input type="password" name="ChangeNewPassword" id="ChangeNewPassword">
+            <br>
+            <button type="submit" name="SavePassword">Save</button>
+        </form>
+    </div>
+
+
+    <script src="./js/dashboard.js"></script>
     <script src="//code.tidio.co/wqykj04koewk5ditm2jn47uqejcv2xzu.js" async></script>
 
 </body>
