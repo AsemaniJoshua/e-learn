@@ -31,9 +31,9 @@ include("ConnectDB.php");
             echo "<script>
             Swal.fire({
                 title: 'Message Sent!',
-                text: 'Data Successfully Collected! You will hear from us soon.',
+                text: 'Data Successfully Collected! You will hear from us soon. Thank you for contacting us.',
                 icon: 'success',
-                timer: 5000,
+                timer: 4000,
                 showConfirmButton: false
             }).then(function() {
                 window.location.href = 'Contact.html'; // Redirect to your login page URL
@@ -47,7 +47,7 @@ include("ConnectDB.php");
                 title: 'Error!',
                 text: 'An error occurred while sending your message. Please try again later.',
                 icon: 'error',
-                timer: 5000,
+                timer: 4000,
                 showConfirmButton: false
             }).then(function() {
                 window.location.href = 'Contact.html'; // Redirect to your login page URL

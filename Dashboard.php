@@ -39,10 +39,10 @@
 
 <?php
 
-if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
-    header("Location: login.html");
-    exit();
-}
+    // if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
+    //     header("Location: login.html");
+    //     exit();
+    // }
 
 
 ?>
@@ -96,12 +96,12 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
         <section id="StudentDetails" class="StudentDetails">
             <div id="StudentId">
                 <h2>Student Id</h2>
-                <span>5</span>
+                <span><?php echo $_SESSION['Student_Id'];?></span>
             </div>
 
             <div id="StudentName">
                 <h2>Student Name</h2>
-                <span>Ama Owusuwaa</span>
+                <span><?php echo $_SESSION['Student_FullName'];?></span>
             </div>
         </section>
 
@@ -139,7 +139,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                     <div>
                         <label>Name:</label>
                         <label>
-                            Name Goes Here
+                            <?php echo $_SESSION['Student_FullName'];?>
                         </label>
                     </div>
                     <button id="ChangeNameBtn">Edit</button>                    
@@ -149,7 +149,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                     <div>
                         <label>Email:</label>
                         <label>
-                            Email Goes Here
+                            <?php echo $_SESSION['Student_Email'];?>
                         </label>
                     </div>
                     <button id="ChangeEmailBtn">Edit</button>                   
@@ -224,7 +224,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll be able to create simple yet attractive webpages, laying a solid foundation for more advanced topics.</p>
     
                 <div class="enroll">
-                    <form action="CheckSate.php" method="POST">
+                    <form action="CheckStateDashboard.php" method="POST">
                         <button class="enrollBtn" type="submit" name="WebDev1">Enroll Now (Free)</button>
                     </form>
                 </div>
@@ -260,7 +260,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll be well-versed in creating more complex, visually stunning, and highly interactive websites.</p>
 
                 <div class="enroll">
-                    <form action="CheckSate.php" method="POST">
+                    <form action="CheckStateDashboard.php" method="POST">
                         <button class="enrollBtn" type="submit" name="WebDev2">Enroll Now ($20)</button>
                     </form>
                 </div>
@@ -301,7 +301,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll have the skills to develop high-performance, scalable, and maintainable frontend applications.</p>
 
                 <div class="enroll">
-                    <form action="CheckSate.php" method="POST">
+                    <form action="CheckStateDashboard.php" method="POST">
                         <button class="enrollBtn" type="submit" name="WebDev3">Enroll Now ($50)</button>
                     </form>
                 </div>
@@ -343,7 +343,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll be able to set up a basic backend server, connect it to a database, and build simple APIs.</p>
 
                 <div class="enroll">
-                    <form action="CheckSate.php" method="POST">
+                    <form action="CheckStateDashboard.php" method="POST">
                         <button class="enrollBtn" type="submit" name="Backend1">Enroll Now (Free)</button>
                     </form>
                 </div>
@@ -385,7 +385,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll be proficient in building and managing more advanced backend systems, ensuring they are secure and efficient.</p>
 
                 <div class="enroll">
-                    <form action="CheckSate.php" method="POST">
+                    <form action="CheckStateDashboard.php" method="POST">
                         <button class="enrollBtn" type="submit" name="Backend2">Enroll Now ($20)</button>
                     </form>
                 </div>
@@ -427,7 +427,7 @@ if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
                 <p>By the end of this course, you'll have the expertise to design, build, and maintain complex, scalable, and secure backend systems.</p>
 
                 <div class="enroll">
-                    <form action="CheckSate.php" method="POST">
+                    <form action="CheckStateDashboard.php" method="POST">
                         <button class="enrollBtn" type="submit" name="Backend3">Enroll Now ($50)</button>
                     </form>
                 </div>
