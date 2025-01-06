@@ -13,42 +13,50 @@
 
     session_start();
 
-    if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
-        echo "<script>
-            Swal.fire({
-                title: 'Information!',
-                text: 'Please login and enroll in that course from the course catalogue!',
-                icon: 'info',
-                timer: 5000,
-                showConfirmButton: false
-            }).then(function() {
-                window.location.href = 'login.html'; // Redirect to your Login page URL
-            });
-            </script>";
-        exit();
-    } 
+    // if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
+    //     echo "<script>
+    //         Swal.fire({
+    //             title: 'Information!',
+    //             text: 'Please login and enroll in that course from the course catalogue!',
+    //             icon: 'info',
+    //             timer: 4000,
+    //             showConfirmButton: false
+    //         }).then(function() {
+    //             window.location.href = 'login.html'; // Redirect to your Login page URL
+    //         });
+    //         </script>";
+    //     exit();
+    // } 
 
     include("ConnectDB.php");
 
-    $WebDev1 = $_POST['WebDev1'];
-    $WebDev2 = $_POST['WebDev2'];
-    $WebDev3 = $_POST['WebDev3'];
-    $Backend1 = $_POST['Backend1'];
-    $Backend2 = $_POST['Backend2'];
-    $Backend3 = $_POST['Backend3'];
+    // $WebDev1 = $_POST['WebDev1'];
+    // $WebDev2 = $_POST['WebDev2'];
+    // $WebDev3 = $_POST['WebDev3'];
+    // $Backend1 = $_POST['Backend1'];
+    // $Backend2 = $_POST['Backend2'];
+    // $Backend3 = $_POST['Backend3'];
+
+    $Student_Id = $_SESSION['Student_Id'];
+    $WebDev1 =1;
+    $WebDev2 =2;
+    $WebDev3 =3;
+    $Backend1 =4;
+    $Backend2 =5;
+    $Backend3 =6;
 
     try{
 
-        if(isset($WebDev1)){
+        if(isset($_POST['WebDev1'])){
             $stmt = $conn->prepare("INSERT INTO student_courses (Student_Id, Course_Id) VALUES (?,?)");
-            $stmt->bind_param("si", $_SESSION['Student_Id'], 1);
+            $stmt->bind_param("ii", $Student_Id, $WebDev1);
             if($stmt->execute()){
                 echo "<script>
                 Swal.fire({
                     title: 'Success!',
                     text: 'You have successfully enrolled in this course!',
                     icon: 'success',
-                    timer: 5000,
+                    timer: 3000,
                     showConfirmButton: false
                 }).then(function() {
                     window.location.href = 'Dashboard.php'; // Redirect to your Dashboard page URL
@@ -59,16 +67,16 @@
             $conn->close();
             exit();
         }
-        else if(isset($WebDev2)){
+        else if(isset($_POST['WebDev2'])){
             $stmt = $conn->prepare("INSERT INTO student_courses (Student_Id, Course_Id) VALUES (?,?)");
-            $stmt->bind_param("si", $_SESSION['Student_Id'], 2);
+            $stmt->bind_param("ii", $Student_Id, $WebDev2);
             if($stmt->execute()){
                 echo "<script>
                 Swal.fire({
                     title: 'Success!',
                     text: 'You have successfully enrolled in this course!',
                     icon: 'success',
-                    timer: 5000,
+                    timer: 3000,
                     showConfirmButton: false
                 }).then(function() {
                     window.location.href = 'Dashboard.php'; // Redirect to your Dashboard page URL
@@ -79,16 +87,16 @@
             $conn->close();
             exit();
         }
-        else if(isset($WebDev3)){
+        else if(isset($_POST['WebDev3'])){
             $stmt = $conn->prepare("INSERT INTO student_courses (Student_Id, Course_Id) VALUES (?,?)");
-            $stmt->bind_param("si", $_SESSION['Student_Id'], 3);
+            $stmt->bind_param("ii", $Student_Id, $WebDev3);
             if($stmt->execute()){
                 echo "<script>
                 Swal.fire({
                     title: 'Success!',
                     text: 'You have successfully enrolled in this course!',
                     icon: 'success',
-                    timer: 5000,
+                    timer: 3000,
                     showConfirmButton: false
                 }).then(function() {
                     window.location.href = 'Dashboard.php'; // Redirect to your Dashboard page URL
@@ -99,16 +107,16 @@
             $conn->close();
             exit();
         }
-        else if(isset($Backend1)){
+        else if(isset($_POST['Backend1'])){
             $stmt = $conn->prepare("INSERT INTO student_courses (Student_Id, Course_Id) VALUES (?,?)");
-            $stmt->bind_param("si", $_SESSION['Student_Id'], 4);
+            $stmt->bind_param("ii", $Student_Id,  $Backend1);
             if($stmt->execute()){
                 echo "<script>
                 Swal.fire({
                     title: 'Success!',
                     text: 'You have successfully enrolled in this course!',
                     icon: 'success',
-                    timer: 5000,
+                    timer: 3000,
                     showConfirmButton: false
                 }).then(function() {
                     window.location.href = 'Dashboard.php'; // Redirect to your Dashboard page URL
@@ -119,16 +127,16 @@
             $conn->close();
             exit();
         }
-        else if(isset($Backend2)){
+        else if(isset($_POST['Backend2'])){
             $stmt = $conn->prepare("INSERT INTO student_courses (Student_Id, Course_Id) VALUES (?,?)");
-            $stmt->bind_param("si", $_SESSION['Student_Id'], 5);
+            $stmt->bind_param("ii", $Student_Id,  $Backend2);
             if($stmt->execute()){
                 echo "<script>
                 Swal.fire({
                     title: 'Success!',
                     text: 'You have successfully enrolled in this course!',
                     icon: 'success',
-                    timer: 5000,
+                    timer: 3000,
                     showConfirmButton: false
                 }).then(function() {
                     window.location.href = 'Dashboard.php'; // Redirect to your Dashboard page URL
@@ -139,16 +147,16 @@
             $conn->close();
             exit();
         }
-        else if(isset($Backend3)){
+        else if(isset($_POST['Backend3'])){
             $stmt = $conn->prepare("INSERT INTO student_courses (Student_Id, Course_Id) VALUES (?,?)");
-            $stmt->bind_param("si", $_SESSION['Student_Id'], 6);
+            $stmt->bind_param("ii", $Student_Id,  $Backend3);
             if($stmt->execute()){
                 echo "<script>
                 Swal.fire({
                     title: 'Success!',
                     text: 'You have successfully enrolled in this course!',
                     icon: 'success',
-                    timer: 5000,
+                    timer: 3000,
                     showConfirmButton: false
                 }).then(function() {
                     window.location.href = 'Dashboard.php'; // Redirect to your Dashboard page URL
@@ -161,7 +169,18 @@
         }
     }
     catch(Exception $e){
-        echo "Error:" . $e->getMessage();
+        // echo "Error:" . $e->getMessage();
+        echo "<script>
+        Swal.fire({
+            title: 'Error!',
+            text: 'This error can be due to connection issues or trying to enroll in a course more than once!, please check your internet connection or the course you are trying to enroll in!',
+            icon: 'error',
+            timer: 7000,
+            showConfirmButton: false
+        }).then(function() {
+            window.location.href = 'Dashboard.php'; // Redirect to your Dashboard page URL
+        });
+        </script>";
     }
 
 ?>
