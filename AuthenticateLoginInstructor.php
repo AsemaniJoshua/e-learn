@@ -18,10 +18,10 @@
 
     include("ConnectDB.php");
 
-    if(isset($_POST['InstructorLogin'])){
+    $InstructorEmail = $_POST['instructorEmail'];
+    $InstructorPassword = $_POST['instructorPassword'];
 
-        $InstructorEmail = $_POST['instructorEmail'];
-        $InstructorPassword = $_POST['instructorPassword'];
+    if(isset($_POST['InstructorLogin'])){
 
         try{
             $stmt = $conn->prepare("SELECT Instructor_Id,Instructor_FullName,Instructor_Email,Instructor_pass,Instructor_Skills FROM instructor WHERE Instructor_Email = ?");
@@ -39,11 +39,25 @@
                     Swal.fire({
                         icon:'success',
                         title: 'Login Successfull',
-                        text: 'Your Login attempt was successful',
+                        text: 'Your Login attempt was successful. Wait as we redirect you to the dashboard.',
                         showConfirmButton: false,
-                        timer: 5000
+                        timer: 4000
                     }).then(() => {
-                        window.location.href = 'Dashboard.php';
+                        window.location.href = 'dashboard.php';
+                    });
+                    </script>";
+                    exit();
+                }
+                else{
+                    echo "<script>
+                    Swal.fire({
+                        icon:'error',
+                        title: 'Error!',
+                        text: 'Your Password is incorrect. Please try again.',
+                        showConfirmButton: false,
+                        timer: 4000
+                    }).then(() => {
+                        window..locat.href = 'login.html';
                     });
                     </script>";
                     exit();
