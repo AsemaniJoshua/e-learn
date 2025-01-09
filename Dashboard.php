@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    include("ConnectDB.php");
 
 ?>
 
@@ -33,16 +34,20 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </head>
 <body>
 
 <?php
 
-    // if(!isset($_SESSION['Student_Id']) || !isset($_SESSION['Instructor_Id'])){
-    //     header("Location: login.html");
-    //     exit();
-    // }
+    $Student_Id = $_SESSION['Student_Id'];
+
+    if(empty($Student_Id)){
+        header("Location: login.html");
+        exit();
+    }
 
 
 ?>
@@ -459,12 +464,39 @@
         <!-- Individual Course-->
 
         <section id="IndividualCourse">
-            <div class="IndividualCourseDetails">
+            
+        <?php
+            $Student_Id = $_SESSION['Student_Id'];
+            $stmt = $conn->prepare("SELECT Course_Id,Course_Name, Course_Desc, Course_Img FROM course INNER JOIN student_courses ON course.Course_Id = student_courses.Course_Id WHERE student_courses.Student_Id = ?");
+            $stmt->bind_param("s",$Student_Id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    echo "<div class='IndividualCourseDetails'>
+                            <img src='".$row['Course_Img']."' alt='Image of ". $row['Course_Name']."'>
+                            <h2>".$row['Course_Name']."</h2>
+                            <p>".$row['Course_Desc']."</p>
+                            <button id='Learn".$row['Course_Id']."'>Learn</button>";
+
+                }
+            }
+            else{
+                echo "<h2>No Courses Found. Register for a course from the course catalog to view its details.</h2>";
+            }
+            
+
+        ?>
+        
+        
+        
+        <!-- <div class="IndividualCourseDetails">
                 <img src="" alt="">
                 <h2>Individual Course</h2>
                 <p>This is the individual course page. Here you can view the details of the course and enroll for it.</p>
                 <button id="Learn">Learn</button>
-            </div>
+            </div> -->
         </section>
     
     </main>
@@ -482,6 +514,49 @@
         </form>
     </div>
 
+    <?php
+
+    if(isset($_POST['SaveName']) || $_SERVER['REQUEST_METHOD'] == "POST"){
+        $ChangeName = $_POST['ChangeName'];
+        $ChangeName = filter_input(INPUT_POST,"ChangeName",FILTER_SANITIZE_STRING);
+        $Student_Id = $_SESSION['Student_Id'];
+
+        $stmt = $conn->prepare("UPDATE student SET Student_FullName = ? WHERE Student_Id = ?");
+        $stmt->bind_param("ss",$ChangeName,$Student_Id);
+
+        if($stmt->execute()){
+            echo "<script>
+            Swal.fire({
+                title: 'Success!',
+                text: 'Name Successfully Changed',
+                icon: 'success',
+                timer: 3000,
+                showConfirmButton: false
+            }).then(function() {
+                window.location.href = 'dashboard.php'; // Redirect to your login page URL
+            });
+            </script>";
+        }
+        else{
+            echo "<script>
+            Swal.fire({
+                title: 'Error!',
+                text: 'An error occurred while changing your name.',
+                icon: 'error'
+                timer: 3000,
+            }).then(function() {
+                window.history.back();
+            });
+            </script>";
+        }
+
+        $stmt->close();
+        $conn->close();
+
+    }
+
+    ?>
+
     <!-- Change Email PopUp -->
 
     <div id="ChangeEmailPopUp">
@@ -494,6 +569,50 @@
             <button type="submit" name="SaveEmail">Save</button>
         </form>
     </div>
+
+    <?php
+
+    if(isset($_POST['SaveEmail']) || $_SERVER['REQUEST_METHOD'] == "POST"){
+        $ChangeEmail = $_POST['ChangeEmail'];
+        $ChangeEmail = filter_input(INPUT_POST,"ChangeEmail",FILTER_SANITIZE_EMAIL);
+        $ChangeEmail = filter_input(INPUT_POST,"ChangeEmail",FILTER_VALIDATE_EMAIL);
+        $Student_Id = $_SESSION['Student_Id'];
+
+        $stmt = $conn->prepare("UPDATE student SET Student_Email = ? WHERE Student_Id = ?");
+        $stmt->bind_param("ss",$ChangeEmail,$Student_Id);
+
+        if($stmt->execute()){
+            echo "<script>
+            Swal.fire({
+                title: 'Success!',
+                text: 'Email Successfully Changed',
+                icon: 'success',
+                timer: 3000,
+                showConfirmButton: false
+            }).then(function() {
+                window.location.href = 'dashboard.php'; // Redirect to your login page URL
+            });
+            </script>";
+        }
+        else{
+            echo "<script>
+            Swal.fire({
+                title: 'Error!',
+                text: 'An error occurred while changing your email.',
+                icon: 'error'
+                timer: 3000,
+            }).then(function() {
+                window.history.back();
+            });
+            </script>";
+        }
+
+        $stmt->close();
+        $conn->close();
+
+    }
+
+    ?>
 
     <!-- Change Password PopUp -->
 

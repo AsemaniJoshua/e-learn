@@ -484,15 +484,13 @@ summary{
     text-align: center;
     padding: 30px;
     border-radius: 10px;
-}
-
-.IndividualCourseDetails:hover{
-    transform: scale(1.05);
+    margin: 20px 20px;
 }
 
 .IndividualCourseDetails img{
     object-fit: cover;
     margin-bottom: 10px;
+    width: 340px;
 }
 
 .IndividualCourseDetails h2{

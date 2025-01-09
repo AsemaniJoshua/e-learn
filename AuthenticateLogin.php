@@ -37,7 +37,7 @@ session_start();
                     echo "<script>
                     Swal.fire({
                         icon:'success',
-                        title: 'Login Successfull',
+                        title: 'Login Successfully',
                         text: 'Your Login attempt was successful. Wait as we redirect you to the dashboard.',
                         showConfirmButton: false,
                         timer: 4000
