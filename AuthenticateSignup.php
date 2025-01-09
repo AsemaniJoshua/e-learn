@@ -24,8 +24,24 @@ if(isset($StudentSignUpBtn) || $_SERVER['REQUEST_METHOD'] == 'POST'){
     $StudentEmail = filter_input(INPUT_POST,"student-email",FILTER_VALIDATE_EMAIL);
     $HashedStudentPassword = password_hash($StudentPassword, PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("INSERT INTO student (Student_FullName, Student_Email, Student_Pass) VALUES (?,?,?)");
-    $stmt->bind_param("sss",$StudentName,$StudentEmail,$HashedStudentPassword);
+    function generateUniqueId($conn) { 
+        do { 
+            // Generate a random 10-digit number 
+            $Student_Id = str_pad(rand(0, 9999999999), 10, '0', STR_PAD_LEFT); 
+            // Check if the ID already exists in the database 
+            $stmt = $conn->prepare("SELECT Student_Id FROM student WHERE Student_Id = ?"); 
+            $stmt->bind_param("s", $student_Id); 
+            $stmt->execute(); 
+            $result = $stmt->get_result(); 
+        } while ($result->num_rows > 0); 
+        
+        return $Student_Id; 
+    }
+
+    $Student_Id = generateUniqueId($conn);
+
+    $stmt = $conn->prepare("INSERT INTO student (Student_Id,Student_FullName, Student_Email, Student_Pass) VALUES (?,?,?,?)");
+    $stmt->bind_param("ssss",$Student_Id,$StudentName,$StudentEmail,$HashedStudentPassword);
 
     if($stmt->execute()){
         echo "<script>
